@@ -29,58 +29,58 @@ CREATE TABLE `user_role` (</br>
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;</br>
 
 #Database Query
-INSERT INTO `role` VALUES (1,'ADMIN');
+INSERT INTO `role` VALUES (1,'ADMIN');<br/>
 
 
 <h3>Set properties values in application.properties file as below-</h3>
 
-server.port = 8091
+server.port = 8091<br/>
 
 # ===============================
 # = DATA SOURCE
 # ===============================
-spring.datasource.url = jdbc:mysql://localhost:3306/interviewportal_db?verifyServerCertificate=false&useSSL=false&requireSSL=false
-spring.datasource.username = root
-spring.datasource.password = root
-spring.datasource.testWhileIdle = true
-spring.datasource.validationQuery = SELECT 1
+spring.datasource.url = jdbc:mysql://localhost:3306/interviewportal_db?verifyServerCertificate=false&useSSL=false&requireSSL=false<br/>
+spring.datasource.username = root<br/>
+spring.datasource.password = root<br/>
+spring.datasource.testWhileIdle = true<br/>
+spring.datasource.validationQuery = SELECT 1<br/>
 
 
 # ===============================
 # = JPA / HIBERNATE
 # ===============================
-spring.jpa.show-sql = true
-spring.jpa.hibernate.ddl-auto = update
-spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImprovedNamingStrategy
-spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+spring.jpa.show-sql = true<br/>
+spring.jpa.hibernate.ddl-auto = update<br/>
+spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImprovedNamingStrategy<br/>
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect<br/>
 
 # ==============================================================
 # = Spring Security / Queries for AuthenticationManagerBuilder  
 # ==============================================================
-spring.queries.users-query=select email, password, active from user where email=?
-spring.queries.roles-query=select u.email, r.role from user u inner join user_role ur on(u.user_id=ur.user_id) inner join role r on(ur.role_id=r.role_id) where u.email=?
+spring.queries.users-query=select email, password, active from user where email=?<br/>
+spring.queries.roles-query=select u.email, r.role from user u inner join user_role ur on(u.user_id=ur.user_id) inner join role r on(ur.role_id=r.role_id) where u.email=?<br/>
 
 # ===============================
 # = Spring Boot Admin configuration
 # ===============================
-#spring.boot.admin.client.url= "http://localhost:1111" 
+#spring.boot.admin.client.url= "http://localhost:1111" <br/>
 
-#endpoints.beans.sensitive=false
-#endpoints.beans.enabled=true
-#management.endpoint.shutdown.enabled=true
-#management.endpoints.enabled-by-default=false
-#management.endpoint.info.enabled=true
-#management.endpoints.jmx.exposure.include=health,info
+#endpoints.beans.sensitive=false<br/>
+#endpoints.beans.enabled=true<br/>
+#management.endpoint.shutdown.enabled=true<br/>
+#management.endpoints.enabled-by-default=false<br/>
+#management.endpoint.info.enabled=true<br/>
+#management.endpoints.jmx.exposure.include=health,info<br/>
 
 # ===============================
 # = Spring Boot Logging configuration
 # ===============================
-logging.file=log/application.log 
-logging.pattern.file=%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx 
+logging.file=log/application.log <br/>
+logging.pattern.file=%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx <br/>
 
 # ===============================
 # = Spring Boot view resolver
 # ===============================
-#spring.mvc.view.prefix=/WEB-INF/view/
-#spring.mvc.view.suffix=.jsp
+#spring.mvc.view.prefix=/WEB-INF/view/<br/>
+#spring.mvc.view.suffix=.jsp<br/>
 
