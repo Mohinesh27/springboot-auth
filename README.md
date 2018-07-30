@@ -13,6 +13,18 @@ CREATE TABLE `user` (</br>
   PRIMARY KEY (`user_id`)</br>
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;</br>
 
+--</br>
+-- Table structure for table `role`</br>
+--</br>
+DROP TABLE IF EXISTS `role`;</br>
+/*!40101 SET @saved_cs_client     = @@character_set_client */;</br>
+/*!40101 SET character_set_client = utf8 */;</br>
+CREATE TABLE `role` (</br>
+  `role_id` int(11) NOT NULL AUTO_INCREMENT,</br>
+  `role` varchar(255) DEFAULT NULL,</br>
+  PRIMARY KEY (`role_id`)</br>
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;</br>
+/*!40101 SET character_set_client = @saved_cs_client */;</br>
 
 --</br>
 -- Table structure for table `user_role`</br>
@@ -28,7 +40,7 @@ CREATE TABLE `user_role` (</br>
   CONSTRAINT `FK_roleId` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)</br>
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;</br>
 
-#Database Query
+#Database Query</br>
 INSERT INTO `role` VALUES (1,'ADMIN');<br/>
 
 
